@@ -39,7 +39,7 @@
 - `docs/progress.md`：当前状态与下一步
 - `docs/contracts/`：按 sprint 组织的合同
 - `docs/qa/`：QA 报告与验收记录
-- `docs/standards/`：Python、Java、数据库、前端、UI 交互和通用模块集成规范
+- `docs/standards/`：Python、Java、数据库、后端 workflow、前端、UI 交互和通用模块集成规范
 - `docs/references/`：设计来源和参考记录
 - `scripts/check.sh`：统一验证入口
 - `.agents/skills/`：可选的本地高频 workflow skills

@@ -4,11 +4,11 @@
 
 - Branch: `main`
 - Harness status: `active`
-- Last verified state: `Sprint 06 theme mode standards verified with ./scripts/check.sh`
+- Last verified state: `Sprint 07 backend workflow standards verified with ./scripts/check.sh`
 
 ## Active Contract
 
-- `docs/contracts/sprint-06-theme-mode-standards.md`
+- `docs/contracts/sprint-07-backend-workflow-standards.md`
 
 ## Latest Completed Work
 
@@ -19,6 +19,7 @@
 - Added UI interaction guidance for list, create, detail, edit, button, feedback, loading, error, and smoothness behavior.
 - Added frontend and backend list-query rules requiring bounded pagination, summary list payloads, and separate detail loading.
 - Added light/dark display mode guidance for frontend implementation and UI interaction behavior.
+- Added backend workflow guidance for lightweight in-process queues, database-backed task state, graceful shutdown, retries, cancellation, and escalation rules.
 
 ## Verification Evidence
 
@@ -37,8 +38,9 @@
 - UI interaction guidance is documentation-only; real frontend projects still need browser-based QA for actual screens.
 - List-query rules are documentation-only; real projects should add API or integration tests once a backend stack exists.
 - Theme mode rules are documentation-only; real projects should verify both modes in browser QA.
+- Backend workflow rules are documentation-only; real projects should add worker recovery and shutdown checks once a backend stack exists.
 
 ## Recommended Next Steps
 
-1. Add framework-specific theme implementation examples after a real frontend stack is selected.
-2. Consider adding a browser QA checklist for light/dark screenshots once the first real UI exists.
+1. Add framework-specific workflow examples after the first real backend stack is selected.
+2. Consider adding example schemas for `image_generation_tasks`, `image_generation_steps`, and `generated_images` when a real story-image service is implemented.

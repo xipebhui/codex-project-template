@@ -62,6 +62,81 @@ Avoid:
 - Reusing one overloaded table for unrelated entity types.
 - Introducing asynchronous projections without documenting freshness expectations.
 
+## Workflow State Design
+
+Use this section when a backend feature has background tasks, async generation, queues, retries, cancellation, or long-running workflow steps.
+
+### Default Rule
+
+The database is the source of truth for workflow state. Queues schedule work; they do not replace persisted task state.
+
+For small projects, use a small set of workflow tables plus an in-process memory queue by default. Do not add external queue tables, event stores, or workflow engine schemas unless the user asks for them or the task has been explained as medium/heavy workflow work.
+
+### Small Workflow Tables
+
+Start with one task table when the workflow is simple.
+
+Common columns:
+
+- `id`
+- `type` or domain-specific task kind
+- `status`
+- `current_step`
+- `progress_current`
+- `progress_total`
+- `attempts`
+- `max_attempts`
+- `next_run_at`
+- `cancel_requested_at`
+- `started_at`
+- `finished_at`
+- `created_at`
+- `updated_at`
+- `input_summary` or a reference to input data
+- `output_ref`
+- `error_code`
+- `error_message`
+- `internal_error_ref`
+
+Add a step table only when step-level visibility, retry, cancellation, or partial success is visible to users or operators.
+
+Common step columns:
+
+- `id`
+- `task_id`
+- `step_name`
+- `status`
+- `attempts`
+- `started_at`
+- `finished_at`
+- `idempotency_key`
+- `output_ref`
+- `error_code`
+- `error_message`
+
+### State Constraints
+
+- Use explicit allowed statuses, through enum, check constraint, or application-level validation plus tests.
+- Keep timestamps for state transitions that affect recovery.
+- Store user-safe error messages separately from internal error details.
+- Store large payloads, generated assets, logs, and provider responses outside the task row when they can grow.
+- Link task output to domain tables rather than embedding large result arrays in one row.
+
+### Recovery Queries
+
+Design indexes for recovery and worker polling:
+
+- status plus `next_run_at`
+- status plus `updated_at` for stuck running task detection
+- user or owner plus creation time for task lists
+- task ID for step and output lookups
+
+Do not add speculative workflow indexes. Add indexes that support actual recovery, list, or detail queries.
+
+### Escalation
+
+If the workflow needs external queue infrastructure, separate worker services, durable replay, or dead-letter operations, document why the small workflow design is insufficient before changing the schema.
+
 ### Large Project
 
 Use this level when the project has high traffic, large tables, strict uptime needs, multiple teams, or regulated data.

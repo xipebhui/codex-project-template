@@ -18,6 +18,7 @@ When work touches a specific technology area, also read the relevant standard be
 - Python: `docs/standards/python.md`
 - Java: `docs/standards/java.md`
 - Database schema, migrations, queries, or persistence: `docs/standards/database.md`
+- Backend background tasks, queues, workflow steps, retries, cancellation, or graceful shutdown: `docs/standards/backend-workflows.md`
 - Frontend UI, web apps, or browser behavior: `docs/standards/frontend.md`
 - Product UI workflows, list/create/detail/edit flows, buttons, feedback, or user interaction behavior: `docs/standards/ui-interaction.md`
 - Common modules such as authentication, user management, payments, subscriptions, admin panels, email, file uploads, or notifications: `docs/standards/reusable-modules.md`
@@ -33,6 +34,7 @@ When work touches a specific technology area, also read the relevant standard be
 7. Match database design complexity to the project's actual scale. Avoid sharding, CQRS, denormalized read models, or other large-system patterns without evidence and explicit approval.
 8. For personal or small projects, prefer mature lightweight integrations for commodity modules. Email registration/login should be the default authentication path unless the user asks for another flow.
 9. For UI work, follow common interaction habits for list, create, detail, edit, button, feedback, loading, and error states instead of inventing ad hoc flows.
+10. For small backend workflows, default to an in-process memory queue with database-backed task state. If a medium or heavy workflow approach is needed, explain why and get user confirmation before adding external queue or workflow infrastructure.
 
 ## Standard Loop
 
