@@ -38,6 +38,27 @@ Use this standard when adding or changing frontend code. Build usable product sc
 - Text must fit its container across desktop and mobile.
 - Responsive behavior should be designed with explicit layout constraints, not accidental wrapping.
 
+## Theme Modes
+
+Use this section when the UI supports light mode, dark mode, or system-based appearance.
+
+### Default Rule
+
+Frontend projects should support both light and dark display modes when the product is expected to be used repeatedly or for long sessions. Small one-off pages may start with one mode only, but app surfaces, dashboards, editors, and operational tools should be designed so a second mode can be added without rewriting components.
+
+### Implementation Rules
+
+1. Use semantic color tokens, not raw colors scattered through components. Examples: `surface`, `surface-muted`, `text-primary`, `text-secondary`, `border-subtle`, `accent`, `danger`, `success`, `warning`, `focus`.
+2. Keep component structure identical across modes. Theme changes should swap tokens, not duplicate components.
+3. Respect the user's system preference through `prefers-color-scheme` when no explicit user choice exists.
+4. Persist explicit user choice when the user selects light mode, dark mode, or system mode.
+5. Avoid flash of the wrong theme during initial load when the framework allows early theme resolution.
+6. Validate contrast, focus states, disabled states, hover states, selected states, charts, badges, and skeleton/loading states in both modes.
+7. Do not communicate status by color alone. Icons, labels, or text must still carry meaning across modes.
+8. Do not invert images, generated artwork, logos, or user-uploaded media unless the asset is specifically designed for it.
+9. Avoid separate one-off shadow systems per mode. Use subtle borders, elevation, and contrast consistently.
+10. Do not introduce a heavy theme framework only to support light/dark mode; use the selected stack's normal theming pattern first.
+
 ## Performance Expectations
 
 - Optimize the critical path: avoid unnecessary client JavaScript, large unused assets, and render-blocking work.

@@ -180,6 +180,23 @@ Use blocking progress only when:
 - The operation changes critical state.
 - The operation must finish before the next step.
 
+## Display Mode Interaction
+
+Use this section when the product supports light mode, dark mode, or system mode.
+
+Rules:
+
+1. Offer display mode as a user preference, usually in settings or an account menu. Do not make it compete with primary workflow actions.
+2. Support three choices when feasible: `System`, `Light`, and `Dark`.
+3. Default to `System` unless the product has a strong domain reason to start in one mode.
+4. Apply mode changes immediately and keep users on the same page with the same unsaved work, filters, scroll position, and selected item.
+5. Persist the user's explicit choice across sessions.
+6. Make the current mode visible in the control through label, selected state, or icon plus accessible name.
+7. Do not use mode changes as a navigation event or reload that loses state.
+8. Keep all important statuses readable in both modes: success, warning, danger, disabled, selected, loading, empty, and focused.
+9. Do not change information hierarchy between modes. Light and dark mode should feel like the same product.
+10. If a product renders images, artwork, previews, charts, or generated media, verify that surrounding chrome does not distort how users judge the content.
+
 ## Loading, Latency, And Smoothness
 
 Smoothness is not decoration. It is the absence of confusion during state changes.
@@ -262,6 +279,7 @@ Before calling a UI workflow done, confirm:
 - Edit flow handles unsaved changes.
 - Buttons use specific labels and show progress.
 - Destructive actions require confirmation or provide undo.
+- Light and dark modes preserve readability, state, and workflow context when supported.
 - Keyboard and focus behavior work for dialogs, menus, tabs, and forms.
 - Returning from detail to list preserves useful context.
 - The UI does not add extra steps, modals, or tours without a real workflow need.
