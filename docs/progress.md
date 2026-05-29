@@ -4,11 +4,11 @@
 
 - Branch: `main`
 - Harness status: `active`
-- Last verified state: `Sprint 04 UI interaction standard verified with ./scripts/check.sh`
+- Last verified state: `Sprint 05 list query standards verified with ./scripts/check.sh`
 
 ## Active Contract
 
-- `docs/contracts/sprint-04-ui-interaction-standards.md`
+- `docs/contracts/sprint-05-list-query-standards.md`
 
 ## Latest Completed Work
 
@@ -17,6 +17,7 @@
 - Added scale-based database design guidance to avoid premature architecture.
 - Added lightweight reusable module guidance for personal/small projects, with email-first authentication as the default.
 - Added UI interaction guidance for list, create, detail, edit, button, feedback, loading, error, and smoothness behavior.
+- Added frontend and backend list-query rules requiring bounded pagination, summary list payloads, and separate detail loading.
 
 ## Verification Evidence
 
@@ -33,8 +34,9 @@
 - Java, Python, database, and frontend checks are not yet active because this template does not contain application code for those stacks.
 - Reusable module choices still need to be rechecked at implementation time because auth/payment packages change quickly.
 - UI interaction guidance is documentation-only; real frontend projects still need browser-based QA for actual screens.
+- List-query rules are documentation-only; real projects should add API or integration tests once a backend stack exists.
 
 ## Recommended Next Steps
 
-1. Add stack-specific UI recipes once a real frontend stack and component library are selected.
-2. Consider adding a small UI review checklist template for sprint QA when the first real frontend project starts.
+1. Add API-specific list pagination examples once the first real backend stack is selected.
+2. Consider adding examples for offset pagination, cursor pagination, and summary/detail response shapes.

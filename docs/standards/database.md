@@ -85,6 +85,65 @@ Avoid:
 - Name foreign keys and indexes clearly enough to diagnose errors.
 - Avoid abbreviations unless they are standard in the domain.
 
+## List Queries And Pagination
+
+Use this section when designing queries or endpoints that back list pages, tables, search results, feeds, admin indexes, dashboards, or exports.
+
+### Default Rule
+
+Dynamic list queries must be bounded. Do not expose an API or data-access function that returns every row from a table unless the dataset has a documented small upper bound.
+
+The backend must enforce pagination. Frontend-only pagination over an unbounded result set is not acceptable.
+
+### Query Shape
+
+List queries should:
+
+- select only the columns needed for the list view
+- use stable ordering
+- apply server-side filters and search conditions
+- apply a limit or page size
+- enforce a maximum limit
+- return pagination metadata needed by the client
+
+Detail queries should be separate from list queries. Load large fields, child collections, logs, histories, audit trails, file contents, and deeply nested related objects only for the selected item or a clearly bounded subset.
+
+### Pagination Strategy
+
+- Offset pagination is acceptable for small and medium admin lists when limits are enforced and ordering is stable.
+- Cursor pagination is preferred for high-change datasets, infinite scroll, feeds, large tables, or user-facing lists where records may be inserted while users browse.
+- Keyset pagination is preferred when performance matters and the sort key supports it.
+- Total counts can be useful, but avoid expensive exact counts on large filtered datasets unless the user experience requires them.
+
+### Indexing For Lists
+
+Add indexes for real list query patterns:
+
+- filter columns used frequently
+- sort columns used with pagination
+- search columns when search is part of the workflow
+- foreign keys used in list joins
+
+Do not add speculative indexes. If a list query is slow, inspect the query plan before introducing complex indexes or denormalized read models.
+
+### Prohibited Patterns
+
+- `SELECT *` for list endpoints.
+- Unbounded `findMany`, `all`, or equivalent ORM calls for dynamic lists.
+- Loading full child collections for every row in a list.
+- Loading large text/blob fields for every row in a list.
+- Running one detail query per row during initial list rendering.
+- Sorting or filtering large dynamic datasets only after returning them to the frontend.
+
+### Exceptions
+
+Loading all records is allowed only when all of the following are true:
+
+- The dataset has a documented small upper bound.
+- The data is needed as a complete set, such as a short static select list.
+- The response excludes unnecessary detail payloads.
+- The reason is recorded near the implementation or in the relevant contract.
+
 ## Verification
 
 Database changes should be checked through the selected migration tool and, where relevant, query planner evidence. At minimum, record:

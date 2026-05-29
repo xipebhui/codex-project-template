@@ -44,6 +44,71 @@ Use this standard when adding or changing frontend code. Build usable product sc
 - Use framework image, font, and bundle optimization features when available.
 - Measure before adding complex performance machinery.
 
+## List Data Fetching
+
+Use this section when building list pages, tables, search results, admin indexes, dashboards, feeds, or any UI that displays multiple records.
+
+### Default Rule
+
+List pages must load bounded summary data. Do not request every record and then paginate, filter, search, or sort only on the client.
+
+The backend owns pagination limits. The frontend may choose page size from allowed values, but the API must enforce a default limit and a maximum limit.
+
+### Request Shape
+
+List requests should include only the state needed to reproduce the list:
+
+- page number and page size, or cursor and limit
+- search query
+- filters
+- sort key and direction
+- optional lightweight view mode
+
+Persist list state in the URL or another restorable navigation state when users are likely to return to the same list.
+
+### Response Shape
+
+List responses should return:
+
+- summary fields required for the visible row, card, or table
+- stable item identifier
+- status fields needed for list actions
+- pagination metadata, such as total count, next cursor, or has-more
+
+List responses must not include full detail payloads by default. Do not include large text bodies, logs, histories, full child collections, file contents, audit trails, or deeply nested related objects unless the list visibly needs that exact data and the payload remains bounded.
+
+Detail pages should load detail data by ID through a detail query or endpoint. Expanded rows may request extra data lazily for the selected row only.
+
+### Pagination Rules
+
+1. Every dynamic list must have a default page size or limit.
+2. Every dynamic list API must enforce a maximum page size or limit.
+3. Use server-side filtering, searching, and sorting for data that can grow beyond a small documented bound.
+4. Use cursor pagination for changing feeds, infinite scroll, or large datasets where offset pagination becomes unstable or expensive.
+5. Offset pagination is acceptable for small and medium admin lists when stable ordering and reasonable limits are enforced.
+6. Infinite scroll still needs backend limits, loading boundaries, and an accessible way to reach later content.
+7. Static option lists may load all values only when the dataset has a documented small upper bound.
+
+### Prohibited Patterns
+
+- Fetching all records to compute pagination in the browser.
+- Fetching all records to run search, filtering, or sorting in the browser when the dataset can grow.
+- Returning detail payloads for every list item.
+- Returning unbounded child arrays for every list item.
+- Triggering one detail request per row on initial list render.
+- Hiding an unbounded request behind a loading spinner or skeleton.
+
+### Review Checklist
+
+Before calling a list page done, confirm:
+
+- The list request has a limit, page size, or cursor.
+- The backend enforces a default and maximum limit.
+- The list response contains only summary fields.
+- Detail data loads separately.
+- Search, filters, sort, pagination, and return navigation preserve useful state.
+- The implementation does not make one extra detail request per visible row unless that behavior is intentional, bounded, and documented.
+
 ## Verification
 
 When frontend code exists, `./scripts/check.sh` should eventually run the project-selected checks, such as:
