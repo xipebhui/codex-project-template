@@ -39,7 +39,7 @@ The core ideas carried into this template are:
 - `docs/progress.md`: current state and next step
 - `docs/contracts/`: sprint-by-sprint contracts
 - `docs/qa/`: QA reports and acceptance notes
-- `docs/standards/`: development standards for Python, Java, database, frontend, and reusable module integration
+- `docs/standards/`: development standards for Python, Java, database, frontend, UI interaction, and reusable module integration
 - `docs/references/`: design references and source notes
 - `scripts/check.sh`: a shared verification entrypoint
 - `.agents/skills/`: optional local skills for high-frequency workflows

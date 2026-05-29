@@ -19,6 +19,7 @@ When work touches a specific technology area, also read the relevant standard be
 - Java: `docs/standards/java.md`
 - Database schema, migrations, queries, or persistence: `docs/standards/database.md`
 - Frontend UI, web apps, or browser behavior: `docs/standards/frontend.md`
+- Product UI workflows, list/create/detail/edit flows, buttons, feedback, or user interaction behavior: `docs/standards/ui-interaction.md`
 - Common modules such as authentication, user management, payments, subscriptions, admin panels, email, file uploads, or notifications: `docs/standards/reusable-modules.md`
 
 ## Operating Rules
@@ -31,6 +32,7 @@ When work touches a specific technology area, also read the relevant standard be
 6. Do not add fallback behavior, compatibility layers, mocks, or silent error handling unless the user explicitly requests it.
 7. Match database design complexity to the project's actual scale. Avoid sharding, CQRS, denormalized read models, or other large-system patterns without evidence and explicit approval.
 8. For personal or small projects, prefer mature lightweight integrations for commodity modules. Email registration/login should be the default authentication path unless the user asks for another flow.
+9. For UI work, follow common interaction habits for list, create, detail, edit, button, feedback, loading, and error states instead of inventing ad hoc flows.
 
 ## Standard Loop
 

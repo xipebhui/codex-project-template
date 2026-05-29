@@ -4,11 +4,11 @@
 
 - Branch: `main`
 - Harness status: `active`
-- Last verified state: `Sprint 03 reusable module guidance verified with ./scripts/check.sh`
+- Last verified state: `Sprint 04 UI interaction standard verified with ./scripts/check.sh`
 
 ## Active Contract
 
-- `docs/contracts/sprint-03-lightweight-reusable-modules.md`
+- `docs/contracts/sprint-04-ui-interaction-standards.md`
 
 ## Latest Completed Work
 
@@ -16,6 +16,7 @@
 - Updated project rules so future Codex sessions read relevant standards before technology-specific work.
 - Added scale-based database design guidance to avoid premature architecture.
 - Added lightweight reusable module guidance for personal/small projects, with email-first authentication as the default.
+- Added UI interaction guidance for list, create, detail, edit, button, feedback, loading, error, and smoothness behavior.
 
 ## Verification Evidence
 
@@ -31,8 +32,9 @@
 - Standards are documentation-only in this sprint; automated enforcement should be added only after a real project selects a stack.
 - Java, Python, database, and frontend checks are not yet active because this template does not contain application code for those stacks.
 - Reusable module choices still need to be rechecked at implementation time because auth/payment packages change quickly.
+- UI interaction guidance is documentation-only; real frontend projects still need browser-based QA for actual screens.
 
 ## Recommended Next Steps
 
-1. Add stack-specific reusable module recipes after the first real project chooses its stack.
-2. Consider adding a compact decision matrix for auth module selection.
+1. Add stack-specific UI recipes once a real frontend stack and component library are selected.
+2. Consider adding a small UI review checklist template for sprint QA when the first real frontend project starts.
