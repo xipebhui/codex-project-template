@@ -11,7 +11,8 @@ Before substantial work, read:
 1. `README.md`
 2. `docs/spec.md`
 3. `docs/progress.md`
-4. the active contract under `docs/contracts/`
+4. `docs/implementation-plan.md` when it exists
+5. the active contract under `docs/contracts/`
 
 When work touches a specific technology area, also read the relevant standard before planning or editing:
 
@@ -35,23 +36,28 @@ When work touches a specific technology area, also read the relevant standard be
 8. For personal or small projects, prefer mature lightweight integrations for commodity modules. Email registration/login should be the default authentication path unless the user asks for another flow.
 9. For UI work, follow common interaction habits for list, create, detail, edit, button, feedback, loading, and error states instead of inventing ad hoc flows.
 10. For small backend workflows, default to an in-process memory queue with database-backed task state. If a medium or heavy workflow approach is needed, explain why and get user confirmation before adding external queue or workflow infrastructure.
+11. When `docs/implementation-plan.md` exists and is marked `locked`, treat it as the global execution source of truth. Do not create a conflicting plan in chat, Plan mode, or sprint contracts.
+12. Sprint contracts must cite the implementation plan milestone and task ID they implement. If the implementation plan is incomplete or conflicts with the request, update the implementation plan first.
 
 ## Standard Loop
 
 Use this delivery loop for non-trivial tasks:
 
 1. Read the current project state.
-2. Select or create a sprint contract.
-3. Implement only that slice.
-4. Run verification.
-5. Record QA findings if needed.
-6. Update progress and next step.
+2. Read or create the implementation plan.
+3. Select the next implementation-plan task.
+4. Create a sprint contract for only that slice.
+5. Implement only that slice.
+6. Run verification.
+7. Record QA findings if needed.
+8. Update the implementation plan, progress, and next step.
 
 ## Done Criteria
 
 A sprint is done only when:
 
 - the agreed scope is implemented
+- the implementation plan task status is updated when a plan exists
 - verification has been run or explicitly deferred
 - known gaps are documented
 - the repository is left in a coherent state for the next session
@@ -73,4 +79,5 @@ Pause and ask for confirmation when:
 - the change affects security, billing, or production data
 - the task requires a cross-cutting rewrite
 - the current contract conflicts with the new request
+- the implementation plan is locked and the new request would change milestones, architecture, or delivery order
 - success criteria are too vague to verify

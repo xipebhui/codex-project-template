@@ -36,6 +36,7 @@
 
 - `AGENTS.md`：Codex 的稳定项目规则
 - `docs/spec.md`：产品和系统意图
+- `docs/implementation-plan.md`：全局实施计划，用来锁定里程碑、任务顺序和关键决策
 - `docs/progress.md`：当前状态与下一步
 - `docs/contracts/`：按 sprint 组织的合同
 - `docs/qa/`：QA 报告与验收记录
@@ -53,10 +54,12 @@
 5. 让 Codex 按下面的循环工作：
    - 读取 `AGENTS.md`
    - 读取 `docs/spec.md`
+   - 读取 `docs/implementation-plan.md`，并从中选择下一个未完成任务
    - 读取 `docs/progress.md`
    - 根据涉及的技术栈或通用模块读取 `docs/standards/` 中的对应规范
-   - 只实现当前 active sprint contract
+   - 只创建和实现当前 implementation plan 任务对应的 sprint contract
    - 运行 `./scripts/check.sh`
+   - 更新 `docs/implementation-plan.md`
    - 更新 `docs/progress.md`
    - 把 QA 结论写入 `docs/qa/`
 
@@ -67,8 +70,9 @@
 1. 把状态写进文件，而不是只放在聊天里。
 2. 用小而可验证的 sprint contract 推进工作。
 3. 把实现和 QA 审查分离。
-4. 保持一个统一的验证命令。
-5. 记录进度，保证下一次 Codex 会话可以无缝继续。
+4. 用 `docs/implementation-plan.md` 锁定全局实施顺序，避免不同模式重新规划。
+5. 保持一个统一的验证命令。
+6. 记录进度，保证下一次 Codex 会话可以无缝继续。
 
 ## 后续迭代计划
 

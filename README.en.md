@@ -36,6 +36,7 @@ The core ideas carried into this template are:
 
 - `AGENTS.md`: stable project rules for Codex
 - `docs/spec.md`: product and system intent
+- `docs/implementation-plan.md`: global implementation plan for milestones, task order, and locked decisions
 - `docs/progress.md`: current state and next step
 - `docs/contracts/`: sprint-by-sprint contracts
 - `docs/qa/`: QA reports and acceptance notes
@@ -53,10 +54,12 @@ The core ideas carried into this template are:
 5. Teach Codex to use the loop:
    - read `AGENTS.md`
    - read `docs/spec.md`
+   - read `docs/implementation-plan.md` and select the next unfinished task
    - read `docs/progress.md`
    - read the relevant file under `docs/standards/` for the technology or reusable module being changed
-   - implement only the active sprint contract
+   - create and implement only the sprint contract for the selected implementation-plan task
    - run `./scripts/check.sh`
+   - update `docs/implementation-plan.md`
    - update `docs/progress.md`
    - write QA findings to `docs/qa/`
 
@@ -67,8 +70,9 @@ This template is built around a lightweight harness:
 1. Put state in files, not just in chat.
 2. Work in small, verifiable sprint contracts.
 3. Separate implementation from QA review.
-4. Keep a single verification command.
-5. Record progress so another Codex session can continue cleanly.
+4. Lock the global delivery sequence in `docs/implementation-plan.md` so different modes do not re-plan the project.
+5. Keep a single verification command.
+6. Record progress so another Codex session can continue cleanly.
 
 ## Iteration Plan
 

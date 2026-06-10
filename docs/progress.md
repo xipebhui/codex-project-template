@@ -4,11 +4,11 @@
 
 - Branch: `main`
 - Harness status: `active`
-- Last verified state: `Sprint 07 backend workflow standards verified with ./scripts/check.sh`
+- Last verified state: `Sprint 08 implementation plan lock verified with ./scripts/check.sh`
 
 ## Active Contract
 
-- `docs/contracts/sprint-07-backend-workflow-standards.md`
+- `docs/contracts/sprint-08-implementation-plan-lock.md`
 
 ## Latest Completed Work
 
@@ -20,6 +20,7 @@
 - Added frontend and backend list-query rules requiring bounded pagination, summary list payloads, and separate detail loading.
 - Added light/dark display mode guidance for frontend implementation and UI interaction behavior.
 - Added backend workflow guidance for lightweight in-process queues, database-backed task state, graceful shutdown, retries, cancellation, and escalation rules.
+- Added global implementation plan guidance to lock delivery sequence across Codex modes and sessions.
 
 ## Verification Evidence
 
@@ -39,8 +40,9 @@
 - List-query rules are documentation-only; real projects should add API or integration tests once a backend stack exists.
 - Theme mode rules are documentation-only; real projects should verify both modes in browser QA.
 - Backend workflow rules are documentation-only; real projects should add worker recovery and shutdown checks once a backend stack exists.
+- Implementation plan enforcement is documentation-only; real projects should keep sprint contracts tied to milestone/task IDs manually until automation exists.
 
 ## Recommended Next Steps
 
-1. Add framework-specific workflow examples after the first real backend stack is selected.
-2. Consider adding example schemas for `image_generation_tasks`, `image_generation_steps`, and `generated_images` when a real story-image service is implemented.
+1. Use `docs/implementation-plan.md` in a real project and refine the template after one full implementation cycle.
+2. Consider adding a QA checklist that verifies each sprint contract references an implementation-plan task ID.

@@ -24,6 +24,7 @@
 5. Reduce token waste on commodity modules by preferring mature lightweight integrations for personal and small projects.
 6. Keep generated UI workflows aligned with familiar, humane interaction patterns instead of letting AI invent awkward flows.
 7. Keep backend workflow design lightweight by default while preserving resumable state in the database.
+8. Preserve global planning decisions in a repository implementation plan so execution does not drift across Codex modes or sessions.
 
 ## Technical Shape
 
@@ -31,6 +32,7 @@
 - Backend: not required by the template
 - Storage: markdown files and repository history
 - Integrations: Codex, optional local skills, optional automation, optional project-specific tooling
+- Planning: `docs/implementation-plan.md` for locked global delivery sequence and task IDs
 - Standards: markdown guidance under `docs/standards/` for Python, Java, database design, backend workflows, frontend work, UI interaction, and reusable commodity modules
 
 ## Constraints
@@ -42,6 +44,7 @@
 - Reusable module guidance should favor email-first authentication and simple hosted payment flows for personal or small products.
 - UI interaction guidance should define product behavior without forcing a visual brand or component library.
 - Backend workflow guidance should default to in-process memory queues plus database state for small tasks, and require explanation before medium or heavy workflow infrastructure is introduced.
+- Sprint contracts should derive from the implementation plan when it exists, instead of re-planning the project from scratch.
 
 ## Non-Goals
 
