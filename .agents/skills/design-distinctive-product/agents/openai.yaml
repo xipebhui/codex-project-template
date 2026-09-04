@@ -1,7 +1,7 @@
 interface:
   display_name: "Distinctive Product Design"
-  short_description: "Explore, build, critique, and refine distinctive product interfaces"
-  default_prompt: "Use $design-distinctive-product to explore, build, critique, and refine a distinctive product interface."
+  short_description: "Design distinctive interfaces through staged human approvals"
+  default_prompt: "Use $design-distinctive-product to design a distinctive product interface, starting with Checkpoint 1 and stopping for my approval."
 
 policy:
   allow_implicit_invocation: true

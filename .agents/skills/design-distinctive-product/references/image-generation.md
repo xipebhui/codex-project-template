@@ -15,5 +15,6 @@
 4. Edit or regenerate weak output.
 5. Integrate the selected asset at its actual display size.
 6. Verify desktop and mobile crops, contrast with surrounding UI, loading behavior, and file weight.
+7. Present inspected candidates at Checkpoint 4 and stop for human selection before implementation.
 
 Generated imagery may be removed during the reduction pass when it does not improve comprehension, identity, or emotional effect. Exploration is required; final inclusion is evidence-based.

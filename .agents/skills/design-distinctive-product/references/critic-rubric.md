@@ -26,6 +26,8 @@ Score each dimension from 1-10 and cite visible evidence:
 
 Return no more than five prioritized findings. Each finding must identify the visible problem, why it matters, and the concrete change to test.
 
+Present findings and proposed changes at Checkpoint 6. Do not apply them until the user approves that checkpoint in a later message.
+
 ## Passing gates
 
 - Product clarity, composition, design identity, and craft are each at least 8.

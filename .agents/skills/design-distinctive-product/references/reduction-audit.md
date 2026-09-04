@@ -11,4 +11,4 @@ Inspect every major visible element and ask:
 
 Pay special attention to repeated labels, explanatory copy, nested cards, pills, gradients, glows, ornamental charts, excessive colors, oversized headings, empty space without compositional purpose, and generated images that compete with the workflow.
 
-Record material decisions as `element / keep-remove-simplify / reason`. Re-render and recheck hierarchy after the changes.
+Record material decisions as `element / keep-remove-simplify / reason`. Present them at Checkpoint 7 and wait for approval before editing. Re-render and recheck hierarchy after the approved changes.

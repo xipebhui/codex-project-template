@@ -50,12 +50,12 @@ The core ideas carried into this template are:
 `design-distinctive-product` turns a product request into a distinctive, usable interface through this workflow:
 
 ```text
-Design intent → Idea exploration → Seeded variation → Design brief
-→ Native image generation → Implementation → Screenshot critique
-→ Reduction pass → Delivery verification
+Design intent → Pause → Idea selection → Pause → Seeded brief → Pause
+→ Native image generation → Pause → Implementation → Pause
+→ Screenshot critique → Pause → Reduction → Verification
 ```
 
-The Skill follows an existing frontend stack. For a standalone lightweight prototype with no selected stack, it uses semantic HTML, CSS, and JavaScript. Image generation uses the current agent environment's native capability; video generation is intentionally out of scope.
+The Skill is human-in-the-loop by default: each turn completes at most one stage and waits for explicit approval before continuing. It follows an existing frontend stack. For a standalone lightweight prototype with no selected stack, it uses semantic HTML, CSS, and JavaScript. Image generation uses the current agent environment's native capability; video generation is intentionally out of scope.
 
 Install for the current project:
 
