@@ -45,6 +45,14 @@
 - `scripts/check.sh`：统一验证入口
 - `.agents/skills/`：可选的本地高频 workflow skills
 
+## 可远程安装的 Skill
+
+`design-distinctive-product` 提供从创意发散、随机种子变体、原生生图、界面实现、独立截图评审到删减验收的完整流程。当前修改推送到 GitHub 后，可让 Codex 执行：
+
+```text
+使用 $skill-installer 安装 https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product
+```
+
 ## 推荐使用方式
 
 1. 把这个模板复制到一个新项目仓库里。

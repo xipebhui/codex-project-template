@@ -45,6 +45,14 @@ The core ideas carried into this template are:
 - `scripts/check.sh`: a shared verification entrypoint
 - `.agents/skills/`: optional local skills for high-frequency workflows
 
+## Remotely Installable Skill
+
+`design-distinctive-product` covers idea exploration, seeded variation, native image generation, interface implementation, independent screenshot critique, reduction, and delivery checks. After the current changes are pushed to GitHub, ask Codex:
+
+```text
+Use $skill-installer to install https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product
+```
+
 ## Recommended Usage
 
 1. Copy this template into a new project repository.

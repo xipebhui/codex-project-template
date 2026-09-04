@@ -13,3 +13,12 @@ A minimal repository template for building a development harness for Codex-drive
 - [Implementation Plan](docs/implementation-plan.md)
 - [Development Standards](docs/standards/)
 - [Reference: Harness design: Building long-running applications with LLMs](docs/references/harness-design-long-running-apps.md)
+- [Skill: Distinctive Product Design](.agents/skills/design-distinctive-product/SKILL.md)
+
+## Installable Skill
+
+After the current changes are pushed to GitHub, ask Codex:
+
+```text
+Use $skill-installer to install https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product
+```

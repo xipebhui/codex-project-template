@@ -1,0 +1,7 @@
+interface:
+  display_name: "Distinctive Product Design"
+  short_description: "Explore, build, critique, and refine distinctive product interfaces"
+  default_prompt: "Use $design-distinctive-product to explore, build, critique, and refine a distinctive product interface."
+
+policy:
+  allow_implicit_invocation: true
