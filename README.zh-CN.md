@@ -47,11 +47,29 @@
 
 ## 可远程安装的 Skill
 
-`design-distinctive-product` 提供从创意发散、随机种子变体、原生生图、界面实现、独立截图评审到删减验收的完整流程。当前修改推送到 GitHub 后，可让 Codex 执行：
+`design-distinctive-product` 把产品需求转化为有辨识度、可使用的产品界面，完整流程为：
 
 ```text
-使用 $skill-installer 安装 https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product
+设计意图 → Idea 发散 → 随机种子变体 → Design Brief
+→ 当前环境原生生图 → 界面实现 → 独立截图评审
+→ 减法审计 → 最终验收
 ```
+
+Skill 会沿用现有项目的前端技术栈。如果是没有指定技术栈的独立轻量原型，则使用语义化 HTML、CSS 和 JavaScript。生图调用当前 Agent 环境提供的原生能力，暂不包含视频生成。
+
+安装到当前项目：
+
+```bash
+npx skills add https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product --agent codex --yes
+```
+
+安装到当前用户的全局 Skill 目录：
+
+```bash
+npx skills add https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product --global --agent codex --yes
+```
+
+如果当前打开的就是这个仓库，则不需要重复安装；Codex 会直接发现 `.agents/skills/` 下的 Skill。
 
 ## 推荐使用方式
 

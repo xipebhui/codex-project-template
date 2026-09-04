@@ -14,7 +14,6 @@
 1. Start a new project with a stable Codex operating structure.
 2. Turn a vague feature request into a sprint contract and implement it incrementally.
 3. Review a completed sprint with QA notes and preserve the next step for a later session.
-4. Install and use a reusable product-design Skill that produces distinctive, verified interfaces across compatible coding-agent environments.
 
 ## Product Priorities
 
@@ -35,7 +34,6 @@
 - Integrations: Codex, optional local skills, optional automation, optional project-specific tooling
 - Planning: `docs/implementation-plan.md` for locked global delivery sequence and task IDs
 - Standards: markdown guidance under `docs/standards/` for Python, Java, database design, backend workflows, frontend work, UI interaction, and reusable commodity modules
-- Skills: remotely installable Skill folders under `.agents/skills/`
 
 ## Constraints
 

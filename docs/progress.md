@@ -4,17 +4,14 @@
 
 - Branch: `main`
 - Harness status: `active`
-- Last verified state: `Sprint 09 distinctive product-design Skill validated and verified with ./scripts/check.sh`
+- Last verified state: `Sprint 08 implementation plan lock verified with ./scripts/check.sh`
 
 ## Active Contract
 
-- `docs/contracts/sprint-09-distinctive-product-design-skill.md`
+- `docs/contracts/sprint-08-implementation-plan-lock.md`
 
 ## Latest Completed Work
 
-- Completed `M5-T01`: added a remotely installable, provider-neutral product-design Skill with seeded variation, native image generation, independent screenshot critique, and reduction.
-- Added a tested random design-seed generator and concise references for briefs, imagery, critique, reduction, and delivery.
-- Documented GitHub repo/path installation and verified the workflow in an isolated forward test.
 - Added source-backed development standards for Python, Java, database design, and frontend development.
 - Updated project rules so future Codex sessions read relevant standards before technology-specific work.
 - Added scale-based database design guidance to avoid premature architecture.
@@ -27,9 +24,6 @@
 
 ## Verification Evidence
 
-- Standard Skill validation passed: `Skill is valid!`
-- Design-seed output and undersized-input tests passed.
-- Isolated forward test reached the mandatory image-generation gate with no silent substitution.
 - `./scripts/check.sh` passed. Output:
 
 ```text
@@ -39,8 +33,6 @@
 
 ## Known Gaps
 
-- The new Skill is not remotely available until this commit is pushed to GitHub.
-- The full image-generation and browser-critique loop still needs exercise on the first real product-design task.
 - Standards are documentation-only in this sprint; automated enforcement should be added only after a real project selects a stack.
 - Java, Python, database, and frontend checks are not yet active because this template does not contain application code for those stacks.
 - Reusable module choices still need to be rechecked at implementation time because auth/payment packages change quickly.
@@ -52,5 +44,5 @@
 
 ## Recommended Next Steps
 
-1. Push the Skill commit and install it from the documented GitHub path.
-2. Use it on a real product interface and refine the workflow from observed results.
+1. Use `docs/implementation-plan.md` in a real project and refine the template after one full implementation cycle.
+2. Consider adding a QA checklist that verifies each sprint contract references an implementation-plan task ID.

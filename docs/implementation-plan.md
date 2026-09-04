@@ -9,10 +9,10 @@ When this file is present and marked `locked`, Codex must not replace it with a 
 ## Planning Status
 
 - Status: `draft`
-- Last updated: `2026-09-04`
-- Product target: `codex-project-template`
-- Current milestone: `M5`
-- Current task: `M5-T01`
+- Last updated: `<YYYY-MM-DD>`
+- Product target: `<short product or project name>`
+- Current milestone: `<milestone id>`
+- Current task: `<task id>`
 
 Status values:
 
@@ -138,20 +138,6 @@ Acceptance:
 
 - `<observable acceptance condition>`
 
-### M5 Reusable Skills
-
-Goal:
-
-- Add small, installable Skills after a workflow proves reusable.
-
-Deliverables:
-
-- A provider-neutral product-design Skill with native image generation and visual QA.
-
-Acceptance:
-
-- The Skill passes validation, its deterministic utilities are tested, and repository checks pass.
-
 ## Task Queue
 
 Each task should be small enough to become one sprint contract or part of one sprint contract.
@@ -161,7 +147,6 @@ Each task should be small enough to become one sprint contract or part of one sp
 | M1-T01 | M1 | `todo` | `<task>` | `<none>` | `<check>` |
 | M1-T02 | M1 | `todo` | `<task>` | `M1-T01` | `<check>` |
 | M2-T01 | M2 | `todo` | `<task>` | `M1-T02` | `<check>` |
-| M5-T01 | M5 | `done` | Add the distinctive product-design Skill | `none` | Skill validation, seed script test, and `./scripts/check.sh` |
 
 Status values:
 
@@ -197,7 +182,6 @@ When the plan changes, record:
 | Date | Change | Reason | Impact |
 | --- | --- | --- | --- |
 | `<YYYY-MM-DD>` | `<change>` | `<reason>` | `<impact>` |
-| `2026-09-04` | Added M5 and completed M5-T01 | Package the validated AI product-design workflow as an installable Skill | Adds a reusable design workflow without changing application architecture |
 
 ## QA Strategy
 

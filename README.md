@@ -15,10 +15,28 @@ A minimal repository template for building a development harness for Codex-drive
 - [Reference: Harness design: Building long-running applications with LLMs](docs/references/harness-design-long-running-apps.md)
 - [Skill: Distinctive Product Design](.agents/skills/design-distinctive-product/SKILL.md)
 
-## Installable Skill
+## Distinctive Product Design Skill
 
-After the current changes are pushed to GitHub, ask Codex:
+`design-distinctive-product` turns a product request into a distinctive, usable interface through this workflow:
 
 ```text
-Use $skill-installer to install https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product
+Design intent → Idea exploration → Seeded variation → Design brief
+→ Native image generation → Implementation → Screenshot critique
+→ Reduction pass → Delivery verification
 ```
+
+It follows an existing frontend stack. For a standalone lightweight prototype with no selected stack, it uses semantic HTML, CSS, and JavaScript. Image generation uses the current agent environment's native capability; video generation is intentionally out of scope.
+
+Install for the current project:
+
+```bash
+npx skills add https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product --agent codex --yes
+```
+
+Install globally for the current user:
+
+```bash
+npx skills add https://github.com/xipebhui/codex-project-template/tree/main/.agents/skills/design-distinctive-product --global --agent codex --yes
+```
+
+If this repository is already the current project, no installation is needed: Codex discovers the Skill directly under `.agents/skills/`.
